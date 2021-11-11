@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { IoMenu, IoClose } from "react-icons/io5";
 import './Navigation.css';
 import useAuth from '../../../hooks/useAuth';
+import profile from '../../../images/profile.png'
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
@@ -27,7 +28,16 @@ const Navigation = () => {
 
                     <NavLink className="nav-links" style={{ textDecoration: 'none' }} to="/dashboard">Dashboard</NavLink>
 
-                    <NavLink className="nav-links" style={{ textDecoration: 'none' }} to="/aboutus">About Us</NavLink>
+                    {
+                        user.email &&
+                        <div className="flex justify-center items-center nav-links gap-1 ">
+                            <h1 className="" style={{ textDecoration: 'none' }}>{user.displayName}</h1>
+                            <div className="mt-1 profile rounded-full w-5">
+                                <img className="rounded-full" src={user.photoURL ? user.photoURL : profile} alt="" />
+                            </div>
+                        </div>
+
+                    }
 
                     {
                         user.email ?

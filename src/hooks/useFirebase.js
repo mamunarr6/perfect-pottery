@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, updateProfile, getIdToken } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
 import initailizeAuthentication from "../Firebase/firebase.init";
 
 initailizeAuthentication();
@@ -10,7 +10,6 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
     const [error, setError] = useState('')
     const [admin, setAdmin] = useState(false)
-    // const [token, setToken] = useState('');
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -80,7 +79,7 @@ const useFirebase = () => {
 
     //set an user as an admin
     useEffect(() => {
-        fetch(`https://shrouded-eyrie-28967.herokuapp.com/users/${user?.email}`)
+        fetch(`http://localhost:5000/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user?.email])
@@ -102,10 +101,6 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
-                // getIdToken(user)
-                //     .then(idToken => {
-                //         setToken(idToken)
-                //     })
             } else {
                 setUser({})
             }

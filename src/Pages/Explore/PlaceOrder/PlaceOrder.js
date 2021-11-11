@@ -36,7 +36,6 @@ const PlaceOrder = () => {
                     reset();
                 }
             })
-        console.log(data)
     }
     return (
         <div>

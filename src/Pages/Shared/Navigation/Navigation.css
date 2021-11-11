@@ -19,7 +19,7 @@
 .nav-menu{
     display: grid;
     grid-template-columns: repeat(5,auto);
-    grid-gap: 10px;
+    grid-gap: 5px;
     list-style: none;
     text-align: center;
     justify-content: right;
@@ -27,7 +27,7 @@
 }
 .nav-links{
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     text-decoration: none;
 }
 .nav-links:hover{
@@ -41,6 +41,17 @@
 .menu-icon{
     display: none;
 }
+
+/* ======================
+    dashboard style
+========================= */
+.dashboard-nav:hover{
+    background: linear-gradient(90deg,rgb(110,94,254)0%,rgba(73,63,252,1)100%);
+    color: #fff;
+    padding-left: 15px;
+    transition: all 0.3s ease-out;
+}
+
 
 @media only screen and (max-width: 960px) {
     .navbarItems{
@@ -69,6 +80,10 @@
         padding: 2rem;
         width: 100%;
         display: table;
+    }
+    .profile{
+        margin-left: 50%;
+        margin-top: 5px;
     }
     .nav-links:hover{
         background-color: #7577fa;
