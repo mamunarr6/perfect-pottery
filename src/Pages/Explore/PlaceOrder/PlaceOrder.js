@@ -14,7 +14,7 @@ const PlaceOrder = () => {
     const { id } = useParams();
     //load single product
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://vast-fjord-76006.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setProductDetails(data))
     }, [id])
@@ -22,7 +22,7 @@ const PlaceOrder = () => {
     const onSubmit = data => {
         data.order = productDetails;
         data.status = 'pending';
-        fetch('http://localhost:5000/placeOrder', {
+        fetch('https://vast-fjord-76006.herokuapp.com/placeOrder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

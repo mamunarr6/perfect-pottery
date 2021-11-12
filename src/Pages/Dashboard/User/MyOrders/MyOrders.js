@@ -11,7 +11,7 @@ const MyOrders = () => {
     const email = user.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders?email=${email}`)
+        fetch(`https://vast-fjord-76006.herokuapp.com/myOrders?email=${email}`)
             .then(res => res.json())
             .then(result => {
                 setMyOrders(result)
@@ -20,7 +20,7 @@ const MyOrders = () => {
 
     const handleDelete = (id) => {
         if (window.confirm('Are sure to delete?')) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://vast-fjord-76006.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
@@ -37,7 +37,7 @@ const MyOrders = () => {
         <div className="container mx-auto">
             <h1 className="text-center text-4xl font-bold tracking-wide text-gray-700 py-8">MY ORDERS : {myOrders?.length}</h1>
             <div className="container mx-auto grid lg:grid-cols-12 md:grid-cols-12 grid-cols-1 gap-2 lg:gap-6 max-w-xs lg:max-w-full md:max-w-4xl">
-                {myOrders?.map(order => <div key={order._id} className="col-span-6 md:col-span-6 grid grid-cols-12  gap-5 border border-gray-400 rounded hover:bg-gray-200 transition-all my-4 h-48">
+                {myOrders?.map(order => <div key={order._id} className="col-span-6 md:col-span-6 grid grid-cols-12  gap-5 border border-gray-400 rounded hover:bg-indigo-100 transition-all my-4 h-48">
                     <div className="col-span-5 h-48">
                         <img className="w-full h-full rounded-l" src={order.order.img} alt="" />
                     </div>
@@ -49,7 +49,7 @@ const MyOrders = () => {
                             <div>
                                 <Rating
                                     placeholderRating={order.order.rating}
-                                    emptySymbol={<IoStarOutline className="text-xl text-gray-600" />}
+                                    emptySymbol={<IoStarOutline className="text-xl text-yellow-500" />}
                                     placeholderSymbol={<IoStar className="text-yellow-500 text-xl" />}
                                     fullSymbol={<IoStar />}
                                     readonly

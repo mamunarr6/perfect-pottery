@@ -7,7 +7,7 @@ const GiveReview = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.img = user.photoURL;
-        fetch('http://localhost:5000/giveReview', {
+        fetch('https://vast-fjord-76006.herokuapp.com/giveReview', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -22,7 +22,7 @@ const GiveReview = () => {
             <h1 className="text-4xl text-gray-600 my-10 font-semibold text-center">Give Your Opinion About Our Service.</h1>
             <div className="flex justify-center my-14 relative">
                 <div className="w-full flex justify-center">
-                    <form onSubmit={handleSubmit(onSubmit)} className="p-10 sm:w-3/6 bg-gray-200 rounded">
+                    <form onSubmit={handleSubmit(onSubmit)} className="p-10 sm:w-3/6 bg-indigo-100 rounded">
 
                         <input className="bg-white py-3 px-2 text-xl font-medium text-gray-600 my-5 w-full rounded"
                             defaultValue={user.displayName} {...register("name", { required: true })} /> <br />

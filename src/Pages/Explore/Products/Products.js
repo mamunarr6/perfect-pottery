@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const Products = ({ product }) => {
-    const { title, price, img, rating, review, _id } = product;
+    const { title, description, price, img, rating, review, _id } = product;
 
     return (
         <div className="md:col-span-4 sm:col-span-6 col-span-12 border border-gray-300 p-5 rounded bg-gray-100">
@@ -13,12 +13,12 @@ const Products = ({ product }) => {
                 <img width="400px" height="400px" src={img} alt="" />
             </div>
             <h1 className="text-center mt-4 text-2xl">{title}</h1>
-
+            <div className="text-center my-3 text-gray-500">{description.slice(0, 100)}</div>
             <div className="flex items-center justify-center">
                 <div>
                     <Rating
                         placeholderRating={rating}
-                        emptySymbol={<IoStarOutline className="text-xl text-gray-600" />}
+                        emptySymbol={<IoStarOutline className="text-xl text-yellow-500" />}
                         placeholderSymbol={<IoStar className="text-yellow-500 text-xl" />}
                         fullSymbol={<IoStar />}
                         readonly

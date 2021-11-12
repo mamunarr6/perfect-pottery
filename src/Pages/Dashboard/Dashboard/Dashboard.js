@@ -9,6 +9,9 @@ import MyOrders from '../User/MyOrders/MyOrders';
 import Pay from '../User/Pay/Pay';
 import { FaBars } from "react-icons/fa";
 import GiveReview from '../User/GiveReview/GiveReview';
+import AddProduct from '../Admin/AddProduduct/AddProduct';
+import ManageAllOrders from '../Admin/ManageAllOrders/ManageAllOrders';
+import ManageProducts from '../Admin/ManageProducts/ManageProducts';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -29,33 +32,47 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className=" grid grid-cols-12 gap-5">
-                <div className='md:col-span-4  md:block bg-gray-200 col-span-12'>
+                <div className='md:col-span-4  md:block bg-indigo-100 col-span-12'>
                     <div className={clicked ? 'block' : ' hidden md:block '}>
 
                         <Link className="text-xl decoration-slice" to="/explore"><button className="w-full py-3 dashboard-nav font-medium">Explore</button></Link>
 
 
-                        <NavLink className="text-xl decoration-slice " to={`${url}`}><button className="w-full py-3 dashboard-nav font-medium">MyOrders</button></NavLink>
+                        <NavLink className="text-xl decoration-slice " to={`${url}`}><button
+                            onClick={() => setClicked(false)}
+                            className="w-full py-3 dashboard-nav font-medium">MyOrders</button></NavLink>
 
 
-                        <NavLink className="text-xl decoration-slice " to={`${url}/Pay`}><button className="w-full py-3 dashboard-nav font-medium" >Pay</button></NavLink>
+                        <NavLink className="text-xl decoration-slice " to={`${url}/Pay`}><button
+                            onClick={() => setClicked(false)}
+                            className="w-full py-3 dashboard-nav font-medium" >Pay</button></NavLink>
 
-                        <NavLink className="text-xl decoration-slice" to={`${url}/giveReview`}><button className="w-full py-3 dashboard-nav font-medium">Give Review</button></NavLink>
+                        <NavLink className="text-xl decoration-slice" to={`${url}/giveReview`}><button
+                            onClick={() => setClicked(false)}
+                            className="w-full py-3 dashboard-nav font-medium">Give Review</button></NavLink>
 
 
                         {admin &&
                             <div>
 
-                                <NavLink className="text-xl decoration-slice" to={`${url}/makeAdmin`}><button className="w-full py-3 dashboard-nav font-medium">Make Admin</button></NavLink>
+                                <NavLink className="text-xl decoration-slice" to={`${url}/makeAdmin`}>
+                                    <button onClick={() => setClicked(false)}
+                                        className="w-full py-3 dashboard-nav font-medium">Make Admin</button></NavLink>
 
 
-                                <NavLink className="text-xl decoration-slice" to={`${url}/addDoctor`}><button className="w-full py-3 dashboard-nav font-medium">Manage All Orders</button></NavLink>
+                                <NavLink className="text-xl decoration-slice" to={`${url}/manageAllOrders`}>
+                                    <button onClick={() => setClicked(false)}
+                                        className="w-full py-3 dashboard-nav font-medium">Manage All Orders</button></NavLink>
 
 
-                                <NavLink className="text-xl decoration-slice" to={`${url}/addDoctor`}><button className="w-full py-3 dashboard-nav font-medium">Manage Orders</button></NavLink>
+                                <NavLink className="text-xl decoration-slice" to={`${url}/manageProducts`}>
+                                    <button onClick={() => setClicked(false)}
+                                        className="w-full py-3 dashboard-nav font-medium">Manage Products</button></NavLink>
 
 
-                                <NavLink className="text-xl decoration-slice" to={`${url}/addDoctor`}><button className="w-full py-3 dashboard-nav font-medium">Add A Product</button></NavLink>
+                                <NavLink className="text-xl decoration-slice" to={`${url}/addProduct`}>
+                                    <button onClick={() => setClicked(false)}
+                                        className="w-full py-3 dashboard-nav font-medium">Add A Product</button></NavLink>
 
 
                             </div>
@@ -77,6 +94,15 @@ const Dashboard = () => {
                         </Route>
                         <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageAllOrders`}>
+                            <ManageAllOrders></ManageAllOrders>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageProducts`}>
+                            <ManageProducts></ManageProducts>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/addProduct`}>
+                            <AddProduct></AddProduct>
                         </AdminRoute>
                     </Switch>
                 </div>

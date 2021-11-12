@@ -19,7 +19,7 @@ const Reviews = () => {
         autoplaySpeed: 3000
     };
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://vast-fjord-76006.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
@@ -41,7 +41,7 @@ const Reviews = () => {
                                 <div className="flex justify-center mt-5">
                                     <Rating
                                         placeholderRating={review.rating}
-                                        emptySymbol={<IoStarOutline className="text-xl text-gray-600" />}
+                                        emptySymbol={<IoStarOutline className="text-xl text-yellow-500" />}
                                         placeholderSymbol={<IoStar className="text-yellow-500 text-xl" />}
                                         fullSymbol={<IoStar />}
                                         readonly

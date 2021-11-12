@@ -4,6 +4,7 @@ import Navigation from '../../Shared/Navigation/Navigation';
 import HomeBanner from '../HomeBanner/HomeBanner';
 import FeatureProducts from '../FeatureProducts/FeatureProducts';
 import Reviews from '../Reviews/Reviews';
+import NewCollection from '../NewCollection/NewCollection';
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
             <Navigation></Navigation>
             <HomeBanner></HomeBanner>
             <FeatureProducts></FeatureProducts>
+            <NewCollection></NewCollection>
             <Reviews></Reviews>
             <Footer></Footer>
         </div>
