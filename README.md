@@ -1,6 +1,6 @@
-# Perfect Potter
+# Perfect Pottery
 
-This website is for pottery selling.We provides the perfect handmade  pottery.This pottery are very unique.
+This website is for pottery selling.We provides the perfect handmade  pottery.This pottery are very unique.We are so careful for our valuable customer and all the customer is valuable for us.
 
 ## Please See the website [Perfect Pottery](https://perfect-pottery.web.app/)
 
