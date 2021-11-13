@@ -15,6 +15,7 @@ const AdminDashboard = () => {
     const { logOut } = useAuth();
     const [clicked, setClicked] = useState(false);
 
+    //handle dashboard on mobile
     const handleDashboard = () => {
         setClicked(!clicked)
     }
@@ -30,6 +31,7 @@ const AdminDashboard = () => {
                     </div>
                 </div>
                 <div className=" grid grid-cols-12 gap-5">
+                    {/* dashboard side bar */}
                     <div className='md:col-span-4  md:block bg-indigo-100 col-span-12'>
                         <div className={clicked ? 'block' : ' hidden md:block mt-10 mb-52'}>
 
@@ -57,6 +59,7 @@ const AdminDashboard = () => {
                             <button className="text-xl font-medium w-full dashboard-nav py-3" onClick={logOut}>Logout</button>
                         </div>
                     </div>
+                    {/* dashboard route */}
                     <div className="md:col-span-8 col-span-12">
                         <Switch>
                             <AdminRoute exact path={`${path}`}>

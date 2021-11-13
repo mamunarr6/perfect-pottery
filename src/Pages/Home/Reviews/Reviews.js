@@ -26,32 +26,37 @@ const Reviews = () => {
     }, [])
 
     return (
-        <div className="container mx-auto my-10">
-            <h2 className="text-3xl text-center font-bold my-10 text-gray-600">Testimonials</h2>
-            <div className="flex justify-center">
-                <div className="w-8/12">
-                    <Slider {...settings}>
-                        {
-                            reviews?.map(review => <div key={review._id}>
-                                <div className="flex justify-center my-4 ">
-                                    <img className=" w-28 rounded-full" src={review.img ? review.img : profile} alt="" />
-                                </div>
-                                <div className="text-gray-500">
-                                    <h4>{review.review}</h4>
-                                </div>
-                                <div className="flex justify-center mt-5">
-                                    <Rating
-                                        placeholderRating={review.rating}
-                                        emptySymbol={<IoStarOutline className="text-xl text-yellow-500" />}
-                                        placeholderSymbol={<IoStar className="text-yellow-500 text-xl" />}
-                                        fullSymbol={<IoStar />}
-                                        readonly
-                                    />
-                                </div>
-                                <h2 className="text-center my-1 text-2xl font-semibold text-gray-600">{review.name}</h2>
-                            </div>)
-                        }
-                    </Slider>
+        <div className="bg-gray-50 py-5">
+            <div className="container mx-auto my-10 ">
+                <h2 className="text-3xl text-center font-bold my-10 text-gray-600">Testimonials</h2>
+                <div className="flex justify-center">
+                    <div className="w-8/12 bg-white shadow-md px-5">
+                        {/* =========================
+                            reviews slider
+                        =========================== */}
+                        <Slider {...settings}>
+                            {
+                                reviews?.map(review => <div key={review._id}>
+                                    <div className="flex justify-center my-4 ">
+                                        <img className=" w-28 rounded-full" src={review.img ? review.img : profile} alt="" />
+                                    </div>
+                                    <div className="text-gray-500">
+                                        <h4>{review.review}</h4>
+                                    </div>
+                                    <div className="flex justify-center mt-5">
+                                        <Rating
+                                            placeholderRating={review.rating}
+                                            emptySymbol={<IoStarOutline className="text-xl text-yellow-500" />}
+                                            placeholderSymbol={<IoStar className="text-yellow-500 text-xl" />}
+                                            fullSymbol={<IoStar />}
+                                            readonly
+                                        />
+                                    </div>
+                                    <h2 className="text-center my-1 text-2xl font-semibold text-gray-600">{review.name}</h2>
+                                </div>)
+                            }
+                        </Slider>
+                    </div>
                 </div>
             </div>
         </div>

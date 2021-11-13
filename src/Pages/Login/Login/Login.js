@@ -40,6 +40,7 @@ const Login = () => {
                                 <br />
                                 <input style={{ background: 'linear-gradient(90deg,rgb(110,94,254)0%,rgba(73,63,252,1)100%)' }} className=" w-full h-10 px-6 rounded text-lg font-semibold text-white" type="submit" value="Login" />
                                 <br />
+                                {/* google login button */}
                                 <p className="text-white my-5">----------------OR----------------</p>
                                 <button onClick={handleGoogleLogin} className="border border-gray-400 px-5 py-3  rounded-full flex items-center hover:bg-gray-100 transition bg-blue-100">
                                     <img className="w-8 mr-2" src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google icon" />

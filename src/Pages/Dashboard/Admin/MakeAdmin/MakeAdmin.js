@@ -7,6 +7,7 @@ const MakeAdmin = () => {
     const handleOnBlur = e => {
         setEmail(e.target.value)
     }
+    //handle make admin
     const handleAdminSubmit = e => {
         const user = { email }
         fetch('https://vast-fjord-76006.herokuapp.com/users/admin', {
@@ -22,7 +23,6 @@ const MakeAdmin = () => {
                     setSuccess(true)
                 }
             })
-
         e.preventDefault()
     }
     const handleOnReset = () => {

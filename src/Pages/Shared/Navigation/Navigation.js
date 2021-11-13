@@ -16,18 +16,24 @@ const Navigation = () => {
         <div className="navigation">
             <div className="navbarItems container mx-auto">
                 <h1 className="navbar-logo">Perfect Pottery</h1>
+                {/* menu icon */}
                 <div className="menu-icon" onClick={handleClick}>
                     {
                         clicked ? <IoClose style={{ color: 'white', width: '35px', fontWeight: '700', marginTop: '5px' }} /> : <IoMenu style={{ color: 'white', width: '35px', fontWeight: '700', marginTop: '5px' }} />
                     }
                 </div>
+                {/* nav bar */}
                 <div className={clicked ? 'nav-menu active' : 'nav-menu'}>
                     <NavLink className="nav-links" style={{ textDecoration: 'none' }} to="/home">Home</NavLink>
 
                     <NavLink className="nav-links" style={{ textDecoration: 'none' }} to="/explore">Explore</NavLink>
 
-                    <NavLink className="nav-links" style={{ textDecoration: 'none' }} to="/dashboard">Dashboard</NavLink>
+                    {
+                        user.email &&
+                        <NavLink className="nav-links" style={{ textDecoration: 'none' }} to="/dashboard">Dashboard</NavLink>
+                    }
 
+                    {/* users name in navbar */}
                     {
                         user.email &&
                         <div className="flex justify-center items-center nav-links gap-1 ">

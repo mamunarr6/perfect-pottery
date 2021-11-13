@@ -6,6 +6,7 @@ const Footer = () => {
         <div className="common-bg" style={{ color: 'white' }}>
             <div className="container mx-auto">
                 <div className="sm:grid grid-cols-12 py-7 ">
+                    {/* footer contact us section */}
                     <div className="col-span-4 ml-2">
                         <h1 className="text-2xl font-bold py-3 ">Contact Us</h1>
                         <div>
@@ -20,6 +21,7 @@ const Footer = () => {
                             </p>
                         </div>
                     </div>
+                    {/* footer about us section */}
                     <div className="col-span-4 ml-2">
                         <h1 className="text-2xl font-bold py-3 ">About Us</h1>
                         <div>
@@ -34,6 +36,7 @@ const Footer = () => {
                             </p>
                         </div>
                     </div>
+                    {/* footer help section */}
                     <div className="col-span-4 ml-2" >
                         <h1 className="text-2xl font-bold py-3 ">Help</h1>
                         <div>

@@ -9,11 +9,6 @@ import OurBlogs from '../OurBlogs/OurBlogs';
 
 const Home = () => {
 
-    // client side code link : https://github.com/programming-hero-web-course-4/niche-website-client-side-mamunarr6
-    //server side code link : https://github.com/programming-hero-web-course-4/niche-website-server-side-mamunarr6
-    //live site link: https://perfect-pottery.web.app/
-    //heroku server : https://vast-fjord-76006.herokuapp.com/
-
     return (
         <div>
             <Navigation></Navigation>

@@ -40,6 +40,7 @@ const ManageProducts = () => {
         <div className="container mx-auto">
             <h1 className="text-center text-4xl font-bold tracking-wide text-gray-600 py-8">MANAGE PRODUCTS : {products?.length}</h1>
 
+            {/* map all products */}
             {products?.map((product, index) =>
                 <div key={product._id} className="grid grid-cols-12 mb-4 pb-2">
 

@@ -4,6 +4,9 @@ import { useForm } from "react-hook-form";
 const AddProduct = () => {
     const [success, setSuccess] = useState(false);
     const { register, handleSubmit, reset } = useForm();
+    /* ====================
+            Post Product
+    =====================*/
     const onSubmit = data => {
         fetch('https://vast-fjord-76006.herokuapp.com/addProduct', {
             method: "POST",

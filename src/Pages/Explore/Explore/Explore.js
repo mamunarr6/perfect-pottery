@@ -8,6 +8,7 @@ const Explore = () => {
     const { user } = useAuth();
     const [products, setProducts] = useState();
 
+    //load all products
     useEffect(() => {
         fetch('https://vast-fjord-76006.herokuapp.com/products')
             .then(res => res.json())
@@ -15,7 +16,7 @@ const Explore = () => {
     }, [user.email])
 
     return (
-        <div>
+        <div className="bg-gray-50">
             <Navigation></Navigation>
             <h1 className="container mx-auto text-gray-600 text-center text-3xl font-bold my-5">Explore The Unique Stylish Handmade Pottery</h1>
             <div className="container mx-auto grid grid-cols-12 gap-7 my-10">
