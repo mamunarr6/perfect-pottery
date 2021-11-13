@@ -4,7 +4,7 @@ import useAuth from '../../../../hooks/useAuth';
 
 const GiveReview = () => {
     const { user } = useAuth();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.img = user.photoURL;
         fetch('https://vast-fjord-76006.herokuapp.com/giveReview', {
@@ -15,7 +15,12 @@ const GiveReview = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(result => console.log(result))
+            .then(result => {
+                if (result.insertedId) {
+                    reset()
+                    alert('Your Review Successfully Posted')
+                }
+            })
     };
     return (
         <div>
@@ -29,7 +34,7 @@ const GiveReview = () => {
 
                         <textarea className="bg-white py-3 px-2 text-gray-600 my-3 w-full rounded" {...register("review", { required: true })} placeholder="What's on your mind?" /> <br />
 
-                        <input className="bg-white py-3 px-2 text-gray-600 my-3 w-full rounded" {...register("rating", { required: true })} placeholder="Give rating out of 5" /> <br />
+                        <input type="number" className="bg-white py-3 px-2 text-gray-600 my-3 w-full rounded" {...register("rating", { required: true })} placeholder="Give rating out of 5" /> <br />
 
                         {errors.exampleRequired && <span>This field is required</span>}
 

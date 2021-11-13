@@ -8,7 +8,7 @@ const Products = ({ product }) => {
     const { title, description, price, img, rating, review, _id } = product;
 
     return (
-        <div className="md:col-span-4 sm:col-span-6 col-span-12 border border-gray-300 p-5 rounded bg-gray-100">
+        <div className="md:col-span-4 sm:col-span-6 col-span-12 border border-indigo-200 p-5 rounded bg-indigo-50">
             <div className="flex justify-center">
                 <img width="400px" height="400px" src={img} alt="" />
             </div>

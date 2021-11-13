@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Footer from '../../Shared/Footer/Footer';
@@ -41,7 +41,6 @@ const Register = () => {
                             <br />
                             <input className=" w-full mb-4 h-10 px-6 rounded" type="password" {...register("password2")} placeholder="Confirm Password" />
                             <br />
-                            {/* {errors.exampleRequired && <span>This field is required</span>} */}
                             <input style={{ background: 'linear-gradient(90deg,rgb(110,94,254)0%,rgba(73,63,252,1)100%)' }} className=" w-full h-10 px-6 rounded text-lg font-semibold text-white" type="submit" value="Register" />
                             <p className="my-8 text-white text-2xl font-semibold">Already User ? Please <NavLink className="text-blue-500" to="/login">Login</NavLink></p>
                         </form>

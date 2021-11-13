@@ -10,14 +10,13 @@ import './Login.css';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
-    const { logInUser, googleLogInUser, setUser, isLoading } = useAuth();
+    const { logInUser, googleLogInUser, isLoading } = useAuth();
     const location = useLocation();
     const history = useHistory();
 
     //handle email password login
     const onSubmit = data => {
         logInUser(data.email, data.password, location, history)
-        console.log(data)
     }
 
     //handle google login
@@ -39,7 +38,6 @@ const Login = () => {
                                 <br />
                                 <input className=" w-full mb-4 h-10 px-6 rounded" type="password" {...register("password")} placeholder="Your Password" />
                                 <br />
-                                {/* {errors.exampleRequired && <span>This field is required</span>} */}
                                 <input style={{ background: 'linear-gradient(90deg,rgb(110,94,254)0%,rgba(73,63,252,1)100%)' }} className=" w-full h-10 px-6 rounded text-lg font-semibold text-white" type="submit" value="Login" />
                                 <br />
                                 <p className="text-white my-5">----------------OR----------------</p>

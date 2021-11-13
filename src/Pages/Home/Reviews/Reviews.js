@@ -16,6 +16,7 @@ const Reviews = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
+        speed: 4000,
         autoplaySpeed: 3000
     };
     useEffect(() => {
@@ -26,7 +27,7 @@ const Reviews = () => {
 
     return (
         <div className="container mx-auto my-10">
-            <h2 className="text-3xl text-center font-semibold my-10 text-gray-600">Testimonials</h2>
+            <h2 className="text-3xl text-center font-bold my-10 text-gray-600">Testimonials</h2>
             <div className="flex justify-center">
                 <div className="w-8/12">
                     <Slider {...settings}>

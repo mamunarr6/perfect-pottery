@@ -5,6 +5,7 @@ import HomeBanner from '../HomeBanner/HomeBanner';
 import FeatureProducts from '../FeatureProducts/FeatureProducts';
 import Reviews from '../Reviews/Reviews';
 import NewCollection from '../NewCollection/NewCollection';
+import OurBlogs from '../OurBlogs/OurBlogs';
 
 const Home = () => {
 
@@ -19,6 +20,7 @@ const Home = () => {
             <HomeBanner></HomeBanner>
             <FeatureProducts></FeatureProducts>
             <NewCollection></NewCollection>
+            <OurBlogs></OurBlogs>
             <Reviews></Reviews>
             <Footer></Footer>
         </div>

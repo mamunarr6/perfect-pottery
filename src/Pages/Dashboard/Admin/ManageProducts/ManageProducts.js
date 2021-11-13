@@ -5,6 +5,7 @@ import useAuth from '../../../../hooks/useAuth';
 
 const ManageProducts = () => {
     const [products, setProducts] = useState();
+
     const { user } = useAuth();
     const email = user.email;
 
@@ -22,7 +23,7 @@ const ManageProducts = () => {
     ====================================== */
     const handleDelete = (id) => {
         if (window.confirm('Are sure to delete?')) {
-            fetch(`https://vast-fjord-76006.herokuapp.com/deleteProduct/${id}`, {
+            fetch(`http://localhost:5000/deleteProduct/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
@@ -38,7 +39,6 @@ const ManageProducts = () => {
     return (
         <div className="container mx-auto">
             <h1 className="text-center text-4xl font-bold tracking-wide text-gray-600 py-8">MANAGE PRODUCTS : {products?.length}</h1>
-
 
             {products?.map((product, index) =>
                 <div key={product._id} className="grid grid-cols-12 mb-4 pb-2">

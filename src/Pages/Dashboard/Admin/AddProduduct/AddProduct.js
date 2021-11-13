@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [success, setSuccess] = useState(false);
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        console.log(data.img)
         fetch('https://vast-fjord-76006.herokuapp.com/addProduct', {
             method: "POST",
             headers: {
@@ -13,12 +13,21 @@ const AddProduct = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(result => console.log(result))
+            .then(result => {
+                if (result.insertedId) {
+                    console.log(result)
+                    setSuccess(true)
+                    reset();
+                } else {
+                    setSuccess(false)
+                }
+            })
     };
 
     return (
         <div>
             <h1 className="text-4xl text-gray-600 my-10 font-semibold text-center"> Add A Product</h1>
+
             <div className="flex justify-center my-14 relative">
                 <div className="w-full flex justify-center">
                     <form onSubmit={handleSubmit(onSubmit)} className="p-10 sm:w-4/6 w-9/12 bg-indigo-100 rounded">
@@ -41,7 +50,7 @@ const AddProduct = () => {
                             className="bg-white py-3 px-2 text-gray-600 my-3 w-full rounded"
                             {...register("price", { required: true })} placeholder="Product Price" />
                         <br />
-                        <input
+                        <input type="number"
                             className="bg-white py-3 px-2 text-gray-600 my-3 w-full rounded"
                             {...register("rating", { required: true })} placeholder="Product Rating" />
                         <br />
@@ -54,6 +63,11 @@ const AddProduct = () => {
                     </form>
                 </div>
             </div>
+            {success &&
+                <div className="bg-green-200 rounded py-5 text-center text-lg font-medium mb-2">
+                    Product added successfully
+                </div>
+            }
         </div>
     );
 };
