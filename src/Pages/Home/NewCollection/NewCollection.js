@@ -46,7 +46,7 @@ const NewCollection = () => {
                             >
                                 <div >
                                     <div className="flex justify-center">
-                                        <img width="400px" height="400px" src={product.img} alt="" />
+                                        <img src={product.img} alt="" />
                                     </div>
                                     <h1 className="text-center mt-4 text-2xl">{product.title}</h1>
                                     <div className="flex justify-center my-5">
