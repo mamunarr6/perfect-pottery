@@ -23,7 +23,7 @@ const ManageProducts = () => {
     ====================================== */
     const handleDelete = (id) => {
         if (window.confirm('Are sure to delete?')) {
-            fetch(`http://localhost:5000/deleteProduct/${id}`, {
+            fetch(`https://vast-fjord-76006.herokuapp.com/deleteProduct/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
